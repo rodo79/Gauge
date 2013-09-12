@@ -7,7 +7,7 @@
     "copyright": "(c) 2013 Wakanda",
 	"repository": {
 	    "type": "git",
-	    "url": ""
+	    "url": "https://github.com/rodo79/Gauge.git"
 	},
 	"keywords": ["wakanda", "widget", "gauge"],
 	"engines": {"wakanda" : ">= 6"},
