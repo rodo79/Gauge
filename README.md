@@ -3,10 +3,10 @@ The __Gauge__ widget is a google style gauges using javascript d3.js, from [tome
 
 ### Properties
 The __Gauge__ widget has the following properties:
-* __Source__: Datasource of type Attribute that contains a number, will be use to set the Gauge value.
-* __Name__: The name of the gauge (displayed into the gauge), default to "Gauge"
-* __Min value__: A number that represente the minimum value of the gauge, default to 0
-* __Max value__: A number that represente the maximum value of the gauge, default to 100
+* __Source__: Datasource of type Attribute (numeric) used to set the gauge's value.
+* __Name__: The text displayed inside of the gauge. By default, it is "Gauge".
+* __Min value__: The gauge's minimum value. By default, it is 0.
+* __Max value__: The gauge's maximum value. By default, it is 100.
 
 ### More Information
 For more information on how to install a custom widget, refer to [Installing a Custom Widget](http://doc.wakanda.org/WakandaStudio0/help/Title/en/page3869.html#1027761).
