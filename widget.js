@@ -19,7 +19,7 @@
     		height,
     		$htmlElement;
 
-    	//manage gaude size depending on widget size	
+    	//manage gauge size depending on widget size	
     	$htmlElement = $("#"+this.id);
     	width = parseInt($htmlElement.css("width"), 10);
     	height = parseInt($htmlElement.css("height"), 10);
