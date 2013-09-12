@@ -1,0 +1,25 @@
+{
+    "name": "Gauge",
+    "author": "rodolphe duperray @ wakanda",
+	"contributors": [
+	],
+    "version": "1.0.0",
+    "copyright": "(c) 2013 Wakanda",
+	"repository": {
+	    "type": "git",
+	    "url": ""
+	},
+	"keywords": ["wakanda", "widget", "gauge"],
+	"engines": {"wakanda" : ">= 6"},
+	"license": "MIT", 
+    "loadDependencies": [
+    	{"id": "Widget_V2"},
+    	{"id": "Gauge/lib/d3.v3.min.js", "path": "WIDGETS_CUSTOM"},
+        {"id": "Gauge/lib/gauge.js", "path": "WIDGETS_CUSTOM"},
+        {"id": "Gauge/widget.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "Gauge/css/widget.css", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "Gauge/designer.js", "studioOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"}
+    ]
+}
+
+
