@@ -1,8 +1,7 @@
 (function() {
 
     var Widget = WAF.require('waf-core/widget'),
-    	widget = Widget.create('Gauge'),
-    	Event = WAF.require('waf-core/event');
+    	widget = Widget.create('Gauge');
 
    /**
     * Creates the widget, automatically called by the framework.

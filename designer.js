@@ -8,32 +8,28 @@
     widget.setWidth('180');
     widget.setHeight('180');
 
-    widget.addAttribute({
+	/*Properties*/
+    widget.addAttributes([{
         'name': 'data-binding',
         'description': 'Source',
         'typeValue': 'datasource'
-    });
-
-    widget.addAttribute({
+    },{
         'name': 'data-displayname',
         'description': 'Name',
         'typeValue': 'string',
         'defaultValue': 'Gauge' 
-    });
-
-	widget.addAttribute({
+    },{
         'name': 'data-minvalue',
         'description': 'Min value',
         'typeValue': 'number',
         'defaultValue': 0 
-    });
-
-	widget.addAttribute({
+    },{
         'name': 'data-maxvalue',
         'description': 'Max value',
         'typeValue': 'number',
         'defaultValue': 100
-    });
+    }]);
+
 
     widget.on('resize', function(event) {
 
