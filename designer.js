@@ -1,4 +1,4 @@
-(function() {
+;(function() {
 
     var widget = Widget.Gauge.inherit(WAF.require('waf-behavior/studio'));
 
@@ -33,17 +33,17 @@
 
     widget.on('resize', function(event) {
 
-	 	var width = event.size.width,
-	 		height = event.size.height,
-	 		size;
+		var width = event.size.width,
+			height = event.size.height,
+			size;
 
-	 	size = width;		
-	 			
+		size = width;		
+
 		if (width > height) {
-	 		size = height;
-	 	}	
+			size = height;
+		}	
 
-	 	this.options.size  = size + 20;
+		this.options.size  = size + 20;
     });
 
     widget.on('display', function(attributes) {
