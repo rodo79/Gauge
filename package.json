@@ -1,10 +1,10 @@
 {
     "name": "Gauge",
-    "author": "rodolphe duperray @ wakanda",
+    "author": "rodolphe duperray",
 	"contributors": [
 	],
     "version": "1.0.0",
-    "copyright": "(c) 2013 Wakanda",
+    "copyright": "4D SAS",
 	"repository": {
 	    "type": "git",
 	    "url": "https://github.com/rodo79/Gauge.git"
