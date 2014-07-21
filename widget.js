@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 WAF.define('Gauge', function() {
-=======
-(function() {
->>>>>>> 883a404ef4b3a2a90bdb5ddf0d48436f2434f8c4
 
     var Widget = WAF.require('waf-core/widget'),
     	widget = Widget.create('Gauge');
 
-<<<<<<< HEAD
     widget.prototype.init = function () {
     	 
     	//creating an unique id for the container 
@@ -23,7 +18,13 @@ WAF.define('Gauge', function() {
 			max: this.maxvalue(),
 			minorTicks: 5
 		}
-		
+
+		//defining the red and yellow zones for the gauge
+        this.getZones();
+			
+		//creating the gauge attribute 
+		this.gauge = new Gauge(this.containerID, this.config);
+
 		//rendering the widget
 		this.render();
 		
@@ -48,8 +49,9 @@ WAF.define('Gauge', function() {
        
     widget.prototype.getZones = function () {   	
 		var range = this.config.max - this.config.min;
-		this.config.yellowZones = [{ from: this.config.min + range*0.75, to: this.config.min + range*0.9 }];
-		this.config.redZones = [{ from: this.config.min + range*0.9, to: this.config.max }];
+        console.log(range);
+		this.config.yellowZones = [{ from: this.config.min + range * 0.75, to: this.config.min + range*0.9 }];
+		this.config.redZones = [{ from: this.config.min + range * 0.9, to: this.config.max }];
 	};
      
     
@@ -73,7 +75,7 @@ WAF.define('Gauge', function() {
     	//defining the red and yellow zones for the gauge
 		this.getZones();
 		//creating the gauge attribute
-		this.gauge = new Gauge(this.containerID, this.config);
+		//this.gauge = new Gauge(this.containerID, this.config);
     	//reconfiguring the gauge library with options
     	this.gauge.configure(this.config);
     	//rendering the gauge library
@@ -108,78 +110,3 @@ WAF.define('Gauge', function() {
  
 	return widget;
 });
-=======
-   /**
-    * Creates the widget, automatically called by the framework.
-    */
-    widget.prototype.init = function () {
-
-    	var myGauges,
-    		that = this,
-    		label,
-    		size, 
-    		min,
-    		max,
-    		width,
-    		height,
-    		$htmlElement;
-
-    	//manage gauge size depending on widget size	
-    	$htmlElement = $("#"+this.id);
-    	width = parseInt($htmlElement.css("width"), 10);
-    	height = parseInt($htmlElement.css("height"), 10);
-    	size = width;			
-		if (width > height) {
-	 		size = height;
-	 	}
-    	size = size + 20;	
-
-    	//set options values
-		label 	= this.options.displayname || "Gauge";
-    	min 	= parseInt(this.options.minvalue, 10) || 0;
-    	max 	= parseInt(this.options.maxvalue, 10) || 100;
-  
-        $(this.node).empty();
-        
-        this.containerID = 'gaugeContainer'+this.id;
-
-        myGauges  = document.createElement('span');
-        myGauges.id = this.containerID;
-
-        $(this.node).append(myGauges);
-			
-		function createGauge() {
-			var config = {
-				size: size,
-				label: label,
-				min: min,
-				max: max,
-				minorTicks: 5
-			}
-			
-			var range = config.max - config.min;
-			config.yellowZones = [{ from: config.min + range*0.75, to: config.min + range*0.9 }];
-			config.redZones = [{ from: config.min + range*0.9, to: config.max }];
-			
-			that.gauges = new Gauge(that.containerID, config);
-			that.gauges.render();
-		}
-		
-		createGauge();
-
-    };   
-
-    /**
-	 * allow to set the value of the gauge
-	 * @class 
-	 * @method value 
-	 * @param {String} myValue Value of the data-binding property 
-	 */
-   	widget.prototype.value = function(myValue) { 
-    	this.gauges.redraw(myValue); 
-    };	
-
-    widget.makeBindableProperty(widget.prototype.value);
-
-})();
->>>>>>> 883a404ef4b3a2a90bdb5ddf0d48436f2434f8c4
