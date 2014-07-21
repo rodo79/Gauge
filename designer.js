@@ -7,11 +7,4 @@
     widget.setHeight('180');
 
 
-    widget.on('resize', function(event) {
-
-		this.config.size = this.fixSize();
-		this.render();
-		
-    });
-
 });
